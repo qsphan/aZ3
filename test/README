@@ -1,0 +1,43 @@
+In this folder
+
++ aZ3.jar : the All-SMT front-end for z3
++ sharpSMT : stand-alone #SMT wrapper for MathSAT, compiled from MathSAT 5.2.11
++ QF_LIA : benchmarks created by Symbolic PathFinder, except for ex.smt2 is created manually.
++ QF_AUFBV : benchmarks created by CBMC 4.7
+
+============
+
+To use aZ3:
+
++ We provide libz3.so and libz3java.so that have been compiled in a 64-bit Fedora machine.
+Please copy to your folder, and point LD_LIBRARY_PATH to these files.
+
+If your machine is different, you need to compile these libraries from the z3 source:
+http://z3.codeplex.com/
+
++ Use the option java -jar aZ3.jar --help for more info
+
+java -jar aZ3.jar QF_LIA/ex.smt2
+-> return the number of models
+
+java -jar aZ3.jar QF_LIA/ex.smt2 --bc
+-> return the number of models. The blocking clauses method is used. Default is depth-first search All-SMT.
+
+java -jar aZ3.jar QF_LIA/ex.smt2 --model
+-> return the number of models and prints all models
+
+java -jar aZ3.jar QF_LIA/ex.smt2 --model --rv
+-> return the number of models and prints all models, values of relevant variables are included in the models.
+
+The relevant variables in QF_LIA have been commented out to use with MathSAT.
+Remove these comments to include values of relevant variables in the models.
+
+============
+
+To use sharpSMT : 
+
+./sharpSMT QF_LIA/ex.smt2
+
+sharpSMT is compiled with MathSAT 5.2.11 in a 64-bit Fedora machine.
+If it doesn't work, it can be re-compiled using the source sharpSMT.c
+

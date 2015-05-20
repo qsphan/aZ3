@@ -1,0 +1,14 @@
+crc32: .18380432
+crc8: .19260383
+dining50: .16215202
+dining6: .17070431
+electronic_purse: .16614613
+grade: .20082072
+implicit_flow: .16877026
+masked_copy: .17470207
+mix_duplicate: .15413794
+population_count: .16225092
+sanity_check1: .16333808
+sanity_check2: .17056528
+sum_query: .16176742
+ten_random_outputs: .16027007
