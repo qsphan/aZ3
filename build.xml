@@ -46,7 +46,8 @@
 
     <!-- our own classes and libs come first -->
     <pathelement location="build/main"/>
-    <pathelement path="${aZ3env.Z3_HOME}/com.microsoft.z3.jar" /> 
+    <!-- <pathelement path="${aZ3env.Z3_HOME}/com.microsoft.z3.jar" /> -->
+    <pathelement path="lib/com.microsoft.z3.jar" /> 
   </path>
 
   <!-- init: common initialization -->
