@@ -21,7 +21,7 @@ public class CBMCwrapper {
 
 			while (line != null) {
 
-				if (line.contains("(get-value") || line.contains("(check-sat)")) {
+				if (line.contains("(get-value") || line.contains("(check-sat)") || line.contains("(check-sat)") ) {
 					line = br.readLine();
 					continue;
 				}
