@@ -22,7 +22,7 @@ public class BlockingClauseSolver extends AllSMTSolver
 				
 			while (isSAT()) {
 				N++;
-				Model m = solver.Model();
+				Model m = solver.getModel();
 				
 				// System.out.println(m.toString());
 
@@ -31,18 +31,18 @@ public class BlockingClauseSolver extends AllSMTSolver
 				
 				
 				for (int i = 0; i < niv; i++) {
-					BoolExpr biti = (BoolExpr) m.Evaluate(imp[i], false);
+					BoolExpr biti = (BoolExpr) m.evaluate(imp[i], false);
 					
-					BoolExpr neg = ctx.MkNot(ctx.MkEq(imp[i], biti));
+					BoolExpr neg = ctx.mkNot(ctx.mkEq(imp[i], biti));
 					
 					if(block == null)
 						block = neg;
 					else 
-						block = ctx.MkOr(new BoolExpr[] { block, neg });
+						block = ctx.mkOr(new BoolExpr[] { block, neg });
 				}
 				
 				// add new blocking clause to the formula
-				solver.Assert(block);
+				solver.add(block);
 				
 				if(printModel){
 					printModel(m);

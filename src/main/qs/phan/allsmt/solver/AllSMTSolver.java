@@ -35,8 +35,8 @@ public abstract class AllSMTSolver {
 		hasRel = hr;
 		BoolExpr formula = parseSMTLIB2File(filename);
 		
-		solver = ctx.MkSolver();
-		solver.Assert(formula);
+		solver = ctx.mkSolver();
+		solver.add(formula);
 	}
 	
 	public void setPrintModel(){
@@ -57,7 +57,7 @@ public abstract class AllSMTSolver {
 	public abstract int count() throws Z3Exception;
 	
 	protected void printLiteral(Model m, Expr e) throws Z3Exception{
-		Expr value = m.Evaluate(e, false);
+		Expr value = m.evaluate(e, false);
 		System.out.print(" (" + e.toString() + " ");
 		System.out.print(value.toString() + " ) ");
 	}
@@ -78,7 +78,7 @@ public abstract class AllSMTSolver {
 	}
 	
 	protected boolean isSAT() throws Z3Exception{
-		return solver.Check() == Status.SATISFIABLE;
+		return solver.check() == Status.SATISFIABLE;
 	}
 	
 	public void report(){

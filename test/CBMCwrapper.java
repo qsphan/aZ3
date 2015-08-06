@@ -21,7 +21,7 @@ public class CBMCwrapper {
 
 			while (line != null) {
 
-				if (line.contains("(get-value") || line.contains("(check-sat)") || line.contains("(check-sat)") ) {
+				if (line.contains("(get-value") || line.contains("(check-sat)") || line.contains("(exit)") ) {
 					line = br.readLine();
 					continue;
 				}
@@ -29,7 +29,7 @@ public class CBMCwrapper {
 				// Output must be named "Output", the final variable will
 				// have the form |c::main::1::Output!0@1#5|
 
-				start = line.indexOf("|c::main::1::Output");
+				start = line.indexOf("|main::1::Output");
 				if (start >= 0) {
 					int start1 = line.indexOf('#', start + 1);
 					int end = line.indexOf('|', start + 1);

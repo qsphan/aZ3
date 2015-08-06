@@ -24,25 +24,25 @@ public class DepthFirstSearchSolver extends AllSMTSolver {
 	public DepthFirstSearchSolver(String filename,boolean hasRel) throws Z3Exception {
 		super(filename, hasRel);
 		pta = new Stack<Integer>();
-		TRUE = ctx.MkTrue();
-		FALSE = ctx.MkFalse();
+		TRUE = ctx.mkTrue();
+		FALSE = ctx.mkFalse();
 	}
 	
 	protected void goNext() throws Z3Exception{
 		BoolExpr asst = null;
-		solver.Push();
+		solver.push();
 		if(backtrack){ // go negative
 			pta.push(NEGATIVE);
 			backtrack = false;
-			asst = ctx.MkEq(imp[depth], FALSE);		
+			asst = ctx.mkEq(imp[depth], FALSE);		
 		}
 		else // go positive
 		{
 			pta.push(POSITIVE);
-			asst = ctx.MkEq(imp[depth], TRUE);
+			asst = ctx.mkEq(imp[depth], TRUE);
 		}
 		depth++;
-		solver.Assert(asst);
+		solver.add(asst);
 	}
 
 	@Override
@@ -60,7 +60,7 @@ public class DepthFirstSearchSolver extends AllSMTSolver {
 					N++;
 					
 					if(printModel){ 
-						Model m = solver.Model();
+						Model m = solver.getModel();
 						printModel(m);
 					}
 					
@@ -89,7 +89,7 @@ public class DepthFirstSearchSolver extends AllSMTSolver {
 		last = NEGATIVE; // last node, NEGATIVE is just a dummy value			 
 		while (depth > 0 && last == NEGATIVE){
 			last = pta.pop();
-			solver.Pop();
+			solver.pop();
 			depth--;
 		}
 		if (depth <= 0 && last == NEGATIVE)

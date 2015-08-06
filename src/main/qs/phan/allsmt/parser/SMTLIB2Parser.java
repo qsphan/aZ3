@@ -36,9 +36,9 @@ public class SMTLIB2Parser {
 		hasRel = hr;
 		if(hasRel){
 			decls = new Hashtable<String, String>();
-			BOOLSORT = ctx.BoolSort();
-			INTSORT = ctx.IntSort();
-			REALSORT = ctx.RealSort();
+			BOOLSORT = ctx.mkBoolSort();
+			INTSORT = ctx.mkIntSort();
+			REALSORT = ctx.mkRealSort();
 		}
 	}
 	
@@ -55,8 +55,8 @@ public class SMTLIB2Parser {
 		niv = vars.length - 1; // the first element is check-allsat
 		imp = new BoolExpr[niv];
 		for (int i = 0; i < niv; i++){
-			imp[i] = (BoolExpr) ctx.MkConst(ctx.MkSymbol(vars[i+1]),
-					ctx.BoolSort());
+			imp[i] = (BoolExpr) ctx.mkConst(ctx.mkSymbol(vars[i+1]),
+					ctx.mkBoolSort());
 		}
 	}
 	
@@ -121,7 +121,7 @@ public class SMTLIB2Parser {
 		for (int i = 0; i < nrv; i++){
 			String var = vars[i+1];
 			Sort s = stringToSort(decls.get(var));
-			rel[i] = ctx.MkConst(ctx.MkSymbol(var),s);
+			rel[i] = ctx.mkConst(ctx.mkSymbol(var),s);
 		}
 	}
 	
@@ -149,7 +149,7 @@ public class SMTLIB2Parser {
 			}
 			br.close();
 				
-			formula = ctx.ParseSMTLIB2String(sb.toString(), null, null, null, null);
+			formula = ctx.parseSMTLIB2String(sb.toString(), null, null, null, null);
 			
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -202,7 +202,7 @@ public class SMTLIB2Parser {
 			br.close();
 				
 			// System.out.println(sb.toString());
-			formula = ctx.ParseSMTLIB2String(sb.toString(), null, null, null, null);
+			formula = ctx.parseSMTLIB2String(sb.toString(), null, null, null, null);
 			// System.out.println(formula.toString());
 			
 			if(hasRel && nrv == 0)
