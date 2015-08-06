@@ -1,4 +1,4 @@
-# aZ3:
+# aZ3
 aZ3 is a Java front end for the SMT solver Z3, which provides the All-SMT functionality. Its algorithms are described in our paper:  
 
 Quoc-Sang Phan and Pasquale Malacaria. "All-Solution Satisfiability Modulo Theories: applications, algorithms and benchmarks". In *Proceedings of the 2015 Tenth International Conference on Availability, Reliability and Security*, ARES ’15, Washington, DC, USA, October 2015. IEEE Computer Society.
