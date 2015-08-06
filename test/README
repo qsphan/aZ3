@@ -1,9 +1,9 @@
 In this folder
 
-+ aZ3.jar : the All-SMT front-end for z3
++ aZ3.jar : the All-SMT front-end for z3 4.4
 + sharpSMT : stand-alone #SMT wrapper for MathSAT, compiled from MathSAT 5.2.11
 + QF_LIA : benchmarks created by Symbolic PathFinder, except for ex.smt2 is created manually.
-+ QF_AUFBV : benchmarks created by CBMC 4.7
++ QF_AUFBV : benchmarks created by CBMC 5.1
 
 ============
 
