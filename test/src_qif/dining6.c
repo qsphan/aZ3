@@ -64,6 +64,5 @@ int main(void){
 		// Output = Output ^ decl[c];
 		Output = Output + decl[c];
 
-	assert(0);
 	return Output;
 }

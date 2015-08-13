@@ -5,6 +5,5 @@ int main(void){
 		Output = base + Source;
 	else
 		Output = base;
-	assert(0);
 	return Output;
 }

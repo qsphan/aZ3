@@ -301,6 +301,48 @@
 ; set_to true (equal)
 (define-fun |main::1::c!0@1#16| () (_ BitVec 32) (_ bv6 32))
 
+; set_to true (equal)
+(define-fun |main#return_value!0#1| () (_ BitVec 32) |main::1::Output!0@1#8|)
+
+; set_to true (equal)
+(define-fun |main::1::N!0@1#4| () (_ BitVec 32) (_ bv6 32))
+
+; set_to true (equal)
+(define-fun |main::1::Output!0@1#10| () (_ BitVec 32) |main::1::Output!0@1#8|)
+
+; find_symbols
+(declare-fun |main::1::Output$array_size0!0@1#3| () (_ BitVec 64))
+; set_to true (equal)
+(define-fun |main::1::coin!0@1#9| () (Array (_ BitVec 64) (_ BitVec 32)) |main::1::coin!0@1#7|)
+
+; find_symbols
+(declare-fun |main::1::obscoin!0@1#1| () (Array (_ BitVec 64) (_ BitVec 32)))
+; set_to true (equal)
+(define-fun |main::1::obscoin!0@1#3| () (Array (_ BitVec 64) (_ BitVec 32)) |main::1::obscoin!0@1#1|)
+
+; set_to true (equal)
+(define-fun |main::1::i!0@1#10| () (_ BitVec 32) (_ bv6 32))
+
+; find_symbols
+(declare-fun |main::1::i$array_size0!0@1#3| () (_ BitVec 64))
+; set_to true (equal)
+(define-fun |main::1::decl!0@1#21| () (Array (_ BitVec 64) (_ BitVec 32)) |main::1::decl!0@1#19|)
+
+; set_to true (equal)
+(define-fun |main::1::h!0@1#4| () (_ BitVec 32) |main::1::h!0@1#2|)
+
+; set_to true (equal)
+(define-fun |main::1::c!0@1#18| () (_ BitVec 32) (_ bv6 32))
+
+; set_to true (equal)
+(define-fun |main::1::Output$array_size0!0@1#4| () (_ BitVec 64) (_ bv6 64))
+
+; set_to true (equal)
+(define-fun |main::1::i$array_size0!0@1#4| () (_ BitVec 64) (_ bv6 64))
+
+; set_to true (equal)
+(define-fun |main::$tmp::return_value_nondet_uint$1!0@1#4| () (_ BitVec 32) |main::$tmp::return_value_nondet_uint$1!0@1#2|)
+
 ; find_symbols
 (declare-fun |main::1::N!0@1#1| () (_ BitVec 32))
 ; convert
@@ -319,8 +361,6 @@
 ; convert
 (define-fun |B9| () Bool (= |main::1::coin!0@1#1| |main::1::coin!0@1#1|))
 
-; find_symbols
-(declare-fun |main::1::obscoin!0@1#1| () (Array (_ BitVec 64) (_ BitVec 32)))
 ; convert
 (define-fun |B10| () Bool (= |main::1::obscoin!0@1#1| |main::1::obscoin!0@1#1|))
 
@@ -382,9 +422,6 @@
 ; convert
 (define-fun |B22| () Bool (= |main::$tmp::return_value_nondet_uint$2!0@1#16| |main::$tmp::return_value_nondet_uint$2!0@1#16|))
 
-; set_to false
-(assert (not false))
-
 
 
 ; end of SMT2 file
@@ -422,38 +459,38 @@
 (declare-fun p30 () Bool)
 (declare-fun p31 () Bool)
 
-(assert (= (= #b1 ((_ extract 0 0) )) p0))
-(assert (= (= #b1 ((_ extract 1 1) )) p1))
-(assert (= (= #b1 ((_ extract 2 2) )) p2))
-(assert (= (= #b1 ((_ extract 3 3) )) p3))
-(assert (= (= #b1 ((_ extract 4 4) )) p4))
-(assert (= (= #b1 ((_ extract 5 5) )) p5))
-(assert (= (= #b1 ((_ extract 6 6) )) p6))
-(assert (= (= #b1 ((_ extract 7 7) )) p7))
-(assert (= (= #b1 ((_ extract 8 8) )) p8))
-(assert (= (= #b1 ((_ extract 9 9) )) p9))
-(assert (= (= #b1 ((_ extract 10 10) )) p10))
-(assert (= (= #b1 ((_ extract 11 11) )) p11))
-(assert (= (= #b1 ((_ extract 12 12) )) p12))
-(assert (= (= #b1 ((_ extract 13 13) )) p13))
-(assert (= (= #b1 ((_ extract 14 14) )) p14))
-(assert (= (= #b1 ((_ extract 15 15) )) p15))
-(assert (= (= #b1 ((_ extract 16 16) )) p16))
-(assert (= (= #b1 ((_ extract 17 17) )) p17))
-(assert (= (= #b1 ((_ extract 18 18) )) p18))
-(assert (= (= #b1 ((_ extract 19 19) )) p19))
-(assert (= (= #b1 ((_ extract 20 20) )) p20))
-(assert (= (= #b1 ((_ extract 21 21) )) p21))
-(assert (= (= #b1 ((_ extract 22 22) )) p22))
-(assert (= (= #b1 ((_ extract 23 23) )) p23))
-(assert (= (= #b1 ((_ extract 24 24) )) p24))
-(assert (= (= #b1 ((_ extract 25 25) )) p25))
-(assert (= (= #b1 ((_ extract 26 26) )) p26))
-(assert (= (= #b1 ((_ extract 27 27) )) p27))
-(assert (= (= #b1 ((_ extract 28 28) )) p28))
-(assert (= (= #b1 ((_ extract 29 29) )) p29))
-(assert (= (= #b1 ((_ extract 30 30) )) p30))
-(assert (= (= #b1 ((_ extract 31 31) )) p31))
+(assert (= (= #b1 ((_ extract 0 0) |main::1::Output!0@1#10|)) p0))
+(assert (= (= #b1 ((_ extract 1 1) |main::1::Output!0@1#10|)) p1))
+(assert (= (= #b1 ((_ extract 2 2) |main::1::Output!0@1#10|)) p2))
+(assert (= (= #b1 ((_ extract 3 3) |main::1::Output!0@1#10|)) p3))
+(assert (= (= #b1 ((_ extract 4 4) |main::1::Output!0@1#10|)) p4))
+(assert (= (= #b1 ((_ extract 5 5) |main::1::Output!0@1#10|)) p5))
+(assert (= (= #b1 ((_ extract 6 6) |main::1::Output!0@1#10|)) p6))
+(assert (= (= #b1 ((_ extract 7 7) |main::1::Output!0@1#10|)) p7))
+(assert (= (= #b1 ((_ extract 8 8) |main::1::Output!0@1#10|)) p8))
+(assert (= (= #b1 ((_ extract 9 9) |main::1::Output!0@1#10|)) p9))
+(assert (= (= #b1 ((_ extract 10 10) |main::1::Output!0@1#10|)) p10))
+(assert (= (= #b1 ((_ extract 11 11) |main::1::Output!0@1#10|)) p11))
+(assert (= (= #b1 ((_ extract 12 12) |main::1::Output!0@1#10|)) p12))
+(assert (= (= #b1 ((_ extract 13 13) |main::1::Output!0@1#10|)) p13))
+(assert (= (= #b1 ((_ extract 14 14) |main::1::Output!0@1#10|)) p14))
+(assert (= (= #b1 ((_ extract 15 15) |main::1::Output!0@1#10|)) p15))
+(assert (= (= #b1 ((_ extract 16 16) |main::1::Output!0@1#10|)) p16))
+(assert (= (= #b1 ((_ extract 17 17) |main::1::Output!0@1#10|)) p17))
+(assert (= (= #b1 ((_ extract 18 18) |main::1::Output!0@1#10|)) p18))
+(assert (= (= #b1 ((_ extract 19 19) |main::1::Output!0@1#10|)) p19))
+(assert (= (= #b1 ((_ extract 20 20) |main::1::Output!0@1#10|)) p20))
+(assert (= (= #b1 ((_ extract 21 21) |main::1::Output!0@1#10|)) p21))
+(assert (= (= #b1 ((_ extract 22 22) |main::1::Output!0@1#10|)) p22))
+(assert (= (= #b1 ((_ extract 23 23) |main::1::Output!0@1#10|)) p23))
+(assert (= (= #b1 ((_ extract 24 24) |main::1::Output!0@1#10|)) p24))
+(assert (= (= #b1 ((_ extract 25 25) |main::1::Output!0@1#10|)) p25))
+(assert (= (= #b1 ((_ extract 26 26) |main::1::Output!0@1#10|)) p26))
+(assert (= (= #b1 ((_ extract 27 27) |main::1::Output!0@1#10|)) p27))
+(assert (= (= #b1 ((_ extract 28 28) |main::1::Output!0@1#10|)) p28))
+(assert (= (= #b1 ((_ extract 29 29) |main::1::Output!0@1#10|)) p29))
+(assert (= (= #b1 ((_ extract 30 30) |main::1::Output!0@1#10|)) p30))
+(assert (= (= #b1 ((_ extract 31 31) |main::1::Output!0@1#10|)) p31))
 
 
 (check-allsat (p0 p1 p2 p3 p4 p5 p6 p7 p8 p9 p10 p11 p12 p13 p14 p15 p16 p17 p18 p19 p20 p21 p22 p23 p24 p25 p26 p27 p28 p29 p30 p31))

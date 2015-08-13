@@ -5,7 +5,6 @@ int main(void){
 		S = S - 5;
 		Output = Output + 1;
 	}
-	assert(0);
 	return Output;
 }
 

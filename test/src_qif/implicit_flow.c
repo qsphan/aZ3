@@ -8,7 +8,6 @@ int main(void){
 	else if (S == 5) Output = 5;
 	else if (S == 6) Output = 6;
 	else Output = 0;
-	assert(0);
 	return Output;
 }
 
