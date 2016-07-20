@@ -31,5 +31,6 @@ unsigned char GetCRC8( unsigned char check , unsigned char ch)
 int main(void)
 {
 	int Output = GetCRC8 (0, nondet_char());
+	assert (0);
 	return 0;
 }

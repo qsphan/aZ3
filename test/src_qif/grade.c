@@ -67,5 +67,6 @@ int func(){
 int main(void)
 {	
 	int Output = func();
+	assert(0);
 	return 0;
 }

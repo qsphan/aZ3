@@ -10,5 +10,6 @@ int main(void){
 	else if (S == 503459) Output = 503459;
 	else if (S == 368516) Output = 368516;
 	else Output = 976055;
+    assert(0);
 	return Output;
 }

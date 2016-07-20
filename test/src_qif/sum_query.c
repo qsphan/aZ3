@@ -4,6 +4,7 @@ int main(void){
 	Output = S1;
 	Output = Output + S2;
 	Output = Output + S3;
+	assert(0);
 	return Output;
 }
 
