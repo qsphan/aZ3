@@ -1,4 +1,4 @@
-MSAT_DIR = /home/qsp/Programs/mathsat-5.3.0/
+MSAT_DIR = /home/qsp/Programs/mathsat-5.3.14-linux-x86_64/
 #MSAT_DIR=/homes/qsp30/Programs/mathsat-5.2.8
 
 CC = gcc
